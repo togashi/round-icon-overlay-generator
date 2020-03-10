@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="{{size}}" height="{{size}}" viewBox="0 0 480 480" version="1.1">
+    <defs>
+        <style type="text/css">
+            .background {
+                opacity: 1;
+                stroke: none;
+            }
+            .flavor.background {
+                fill: {{flavor.bgColor}};
+                fill-opacity: {{flavor.bgOpacity}};
+            }
+            .build.background {
+                fill: {{build.bgColor}};
+                fill-opacity: {{build.bgOpacity}};
+            }
+            .label {
+                line-height: 1.25;
+                text-align: center;
+                text-anchor: middle;
+                letter-spacing: 0px;
+                word-spacing: 0px;
+                font-style: normal;
+                font-variant: normal;
+                font-weight: normal;
+                font-stretch: normal;
+            }
+            .flavor.label {
+                fill: {{flavor.fgColor}};
+                fill-opacity: {{flavor.fgOpacity}};
+                font-family: "{{flavor.fontFamily}}";
+                font-size: {{flavor.fontSize}}px;
+            }
+            .build.label {
+                fill: {{build.fgColor}};
+                fill-opacity: {{build.fgOpacity}};
+                font-family: "{{build.fontFamily}}";
+                font-size: {{build.fontSize}}px;
+            }
+            #flavor {
+                display: {{flavor.display}}
+            }
+            #build {
+                display: {{build.display}}
+            }
+        </style>
+    </defs>
+    <g id="flavor">
+        <path id="flavor-bg" class="flavor background" d="M 307.7325,30.742813 A 219.99999,219.99999 0 0 0 84.324477,84.445203 219.99999,219.99999 0 0 0 30.787806,307.68751 Z" />
+        <text id="flavor-label" class="flavor label" transform="rotate(-45)">
+            <tspan id="flavor-text" class="flavor" x="-1.0567007" y="{{flavor.y}}" orig-y="195.50923">{{flavor.text}}</tspan>
+        </text>
+    </g>
+    <g id="build">
+        <path id="build-bg" class="build background" d="M 172.15504,449.26547 A 220,220 0 0 0 395.56307,395.56308 220,220 0 0 0 449.09974,172.32077 Z" />
+        <text id="build-label" class="build label" transform="rotate(-45)">
+            <tspan id="build-text" class="build" x="-0.67392391" y="{{build.y}}" orig-y="512.91174">{{build.text}}</tspan>
+        </text>
+    </g>
+</svg>

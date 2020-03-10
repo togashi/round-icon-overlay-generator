@@ -1,0 +1,16 @@
+{
+    "extends": ["eslint:recommended"],
+    "plugins": [],
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2019
+    },
+    "env": {"node": true, "es6": true},
+    "globals": {},
+    "rules": {
+        "semi": "off",
+        "no-console": "off",
+        "no-unused-vars": "warn",
+        "no-fallthrough": "off"
+    }
+}
