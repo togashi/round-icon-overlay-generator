@@ -12,13 +12,14 @@ const fsPromise = {
     writeFile: promisify(fs.writeFile)
 }
 
-commander.version('20200309').description('Android round launcher icon overlay image genarator')
+commander.version('1.1.0(20200417)').description('Android round launcher icon overlay image genarator')
     .option('-b, --build <BUILD_TYPE>', 'build-type')
     .option('-f, --flavor <PRODUCT_FLAVOR>', 'product-flavor')
     .option('-o, --output <FILE>', 'output file (default: stdout)')
     .option('-s, --size <SIZE>', 'size (px)', 512)
     .option('-F, --font <FONT>', 'font-family', 'sans-serif')
     .option('-S, --font-size <SIZE>', 'font-size (px)', 64)
+    .option('-W, --font-weight <WEIGHT>', 'font-weight', 'normal')
     .option('--fg-color <COLOR>', 'text color', '#000')
     .option('--bg-color <COLOR>', 'background color', '#FFF')
     .option('--fg-opacity <OPACITY>', 'text opacity', 1)
@@ -30,6 +31,7 @@ commander.version('20200309').description('Android round launcher icon overlay i
     .option('--flavor-font <FONT>', 'product-flavor font-family')
     .option('--flavor-font-size <SIZE>', 'product-flavor font-size (px)')
     .option('--flavor-font-scale <SCALE>', 'product-flavor font scale', 1)
+    .option('--flavor-font-weight <WEIGHT>', 'product-flavor font weight')
     .option('--flavor-text-offset <OFFSET>', 'product-flavor text position offset', 0)
     .option('--build-fg-color <COLOR>', 'build-type text color')
     .option('--build-fg-opacity <OPACITY>', 'build-type text opacity')
@@ -38,6 +40,7 @@ commander.version('20200309').description('Android round launcher icon overlay i
     .option('--build-font <FONT>', 'build-type font-family')
     .option('--build-font-size <SIZE>', 'build-type font-size (px)')
     .option('--build-font-scale <SCALE>', 'build-type font scale', 1)
+    .option('--build-font-weight <WEIGHT>', 'build-type font weight')
     .option('--build-text-offset <OFFSET>', 'build-type text position offset', 0)
     .parse(process.argv)
 
@@ -57,6 +60,7 @@ async function main(cli) {
             bgOpacity: cli.flavorBgOpacity || cli.bgOpacity,
             fontFamily: cli.flavorFont || cli.font,
             fontSize: (cli.flavorFontSize || cli.fontSize) * parseFloat(cli.flavorFontScale),
+            fontWeight: (cli.flavorFontWeight || cli.fontWeight),
             y: 195.50923 + parseFloat(cli.flavorTextOffset)
         },
         build: {
@@ -68,6 +72,7 @@ async function main(cli) {
             bgOpacity: cli.buildBgOpacity || cli.bgOpacity,
             fontFamily: cli.buildFont || cli.font,
             fontSize: (cli.buildFontSize || cli.fontSize) * parseFloat(cli.buildFontScale),
+            fontWeight: (cli.buildFontWeight || cli.fontWeight),
             y: 512.91174 + parseFloat(cli.buildTextOffset)
         }
     })

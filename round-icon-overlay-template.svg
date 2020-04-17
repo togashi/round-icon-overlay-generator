@@ -30,12 +30,14 @@
                 fill-opacity: {{flavor.fgOpacity}};
                 font-family: "{{flavor.fontFamily}}";
                 font-size: {{flavor.fontSize}}px;
+                font-weight: {{flavor.fontWeight}};
             }
             .build.label {
                 fill: {{build.fgColor}};
                 fill-opacity: {{build.fgOpacity}};
                 font-family: "{{build.fontFamily}}";
                 font-size: {{build.fontSize}}px;
+                font-weight: {{build.fontWeight}};
             }
             #flavor {
                 display: {{flavor.display}}

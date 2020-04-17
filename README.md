@@ -14,7 +14,7 @@ Generate overlay image for launcher round icon of android apps.
 > round-icon-overlay --flavor develop --output overlay.png
 ```
 
-and use with plugins like [gradle-android-ribbonizer-plugin](https://github.com/akaita/easylauncher-gradle-plugin)
+and use with plugins like [easylauncher-gradle-plugin](https://github.com/akaita/easylauncher-gradle-plugin)
 
 ```groovy
 easylauncher {

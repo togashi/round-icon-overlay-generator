@@ -1,10 +1,10 @@
 {
   "name": "round-icon-overlay-generator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "bin": {
-    "round-icon-overlay": "index.js"
+    "round-icon-overlay": "round-icon-overlay.js"
   },
   "scripts": {
     "lint": "npx eslint ."
